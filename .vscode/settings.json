@@ -1,0 +1,9 @@
+{
+  "html-css-class-completion.enableEmmetSupport": false,
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+//   "emmet.includeLanguages": {
+//      "django-html": "html",
+// }
+}
