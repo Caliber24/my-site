@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from datetime import datetime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.http import HttpResponse
+from website.models import Contact
 
 from .models import Post
 # Create your views here.
@@ -57,3 +59,4 @@ def blog_search (request, **kwargs):
     if s := request.GET.get('s'):
       posts = posts.filter(content__contains=s)
   return render(request, "blog/blog-home.html", {'posts':posts})
+

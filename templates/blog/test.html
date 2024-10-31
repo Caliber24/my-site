@@ -8,13 +8,30 @@
 </head>
 <body>
   <h3>test</h3>
-  <p> test {% totalposts as tp %} </p>
-  <p>{{tp}}</p>
+  <p> test  </p>
   {% comment %} {% posts as totalposts %}
   {% for post in totalposts %}
   <p>{{post.content|snippet:50}}</p>
   <p>{{post.title}}</p>
   {% endfor %} {% endcomment %}
-  {% popularposts %}
+
+  <form action="{% url 'blog:test' %}" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    {% comment %} <label for="">name:</label>
+    <input type="text" name="name" id="">
+    <br>
+    <label for="">email:</label>
+    <input type="email" name="email" id="">
+    <br>
+    <label for="">subject:</label>
+    <input type="text" name="subject" id="">
+    <br>
+    <label for="">message:</label>
+    <input type="text" name="message" id="">
+    <br>{% endcomment %}
+    <button type="submit">submit</button> 
+  </form>
 </body>
 </html>
